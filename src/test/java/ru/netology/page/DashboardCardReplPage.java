@@ -10,10 +10,9 @@ public class DashboardCardReplPage {
     private SelenideElement fromWhich = $("[data-test-id=from]").$("[class=input__control]");
     private SelenideElement battonReplenish = $("[data-test-id=action-transfer");
 
-    public DashboardCardPage replenishCard(String sumRep, int fromRep) {
+    public DashboardCardPage replenishCard(String sumRep, String fromRep) {
         sum.setValue(sumRep);
-        if (fromRep == 2) fromWhich.setValue(DataHelp.getCard_1().getNumber());
-        else fromWhich.setValue(DataHelp.getCard_2().getNumber());
+        fromWhich.setValue(fromRep);
         battonReplenish.click();
         return new DashboardCardPage();
     }

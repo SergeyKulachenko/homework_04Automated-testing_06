@@ -27,15 +27,15 @@ public class DataHelp {
     @Value
     public static class Card {
         private String number;
-        private String balance;
+//        private String balance;
     }
 
     public static Card getCard_1() {
-        return new Card("5559 0000 0000 0001", "10000");
+        return new Card("5559 0000 0000 0001");
     }
 
     public static Card getCard_2() {
-        return new Card("5559 0000 0000 0002", "10000");
+        return new Card("5559 0000 0000 0002");
     }
 
 }
