@@ -55,7 +55,7 @@ public class MonTransfer {
 
 
     @Test
-    void depositAmountExceedsActualAmount() {
+    void shouldDepositAmountExceedsActualAmount() {
         open("http://localhost:9999");
         var loginPage = new LoginPage();
         var authInfo = DataHelp.getAuthInf();      //получение логина и пароля
@@ -69,9 +69,8 @@ public class MonTransfer {
         dashboardCardReplPage.replenishCard(String.valueOf(sumRepPlus), DataHelp.getCard_1().getNumber());  //ввод данных
         val balance_1_CardAfteRep = dashboardCardPage.infoBalansCard(DataHelp.getCard_1().getNumber());  //получение баланса
         val balance_2_CardAfteRep = dashboardCardPage.infoBalansCard(DataHelp.getCard_2().getNumber());  //получение баланса
-        int sum_Rep = Integer.parseInt(String.valueOf(sumRepPlus));
-        assertEquals(balance_1_CardBefoRep - sum_Rep, balance_1_CardAfteRep);
-        assertEquals(balance_2_CardBefoRep + sum_Rep, balance_2_CardAfteRep);
+        assertEquals(balance_1_CardBefoRep, balance_1_CardAfteRep);
+        assertEquals(balance_2_CardBefoRep, balance_2_CardAfteRep);
     }
 
 }
