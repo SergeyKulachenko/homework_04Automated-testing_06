@@ -3,7 +3,7 @@ package ru.netology.data;
 import lombok.Value;
 
 public class DataHelp {
-//    private DataHelp(){}
+    private DataHelp(){}
 
     @Value
     public static class AuthInfo {
@@ -27,7 +27,6 @@ public class DataHelp {
     @Value
     public static class Card {
         private String number;
-//        private String balance;
     }
 
     public static Card getCard_1() {
